@@ -1,0 +1,23 @@
+<div class="car-park-container">
+    <form [formGroup]="parkForm" (ngSubmit)="onPark()">
+      <div class="form-space">
+        <label for="plate">Plate number</label>
+        <input
+          class="form-style"
+          type="text"
+          id="plate"
+          formControlName="numberPlate"
+        />
+      </div>
+      <div class="form-space">
+        <label for="color">Color</label>
+        <input
+          class="form-style"
+          type="text"
+          id="color"
+          formControlName="carColor"
+        />
+      </div>
+      <button type="submit" class="btn-style submit-button" [disabled]="!parkForm.valid">Park Car</button>
+    </form>
+  </div>
