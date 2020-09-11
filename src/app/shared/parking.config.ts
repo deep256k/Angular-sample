@@ -10,7 +10,7 @@ export const carData: CarDataresponse[] = [
     {
       carNo: 'KA64YX1659',
       color: 'White',
-      slot: 10,
+      slot: 7,
       date: 'Sep 16, 2019, 2:32:10 PM',
     },
     {
