@@ -7,7 +7,7 @@ export interface CarDataresponse {
   carNo: string;
   color: string;
   slot: number;
-  date: Date;
+  date: Date | string;
 }
 
 export interface SortHeader{

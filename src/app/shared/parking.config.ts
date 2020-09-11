@@ -2,34 +2,34 @@ import { CarDataresponse, ParkingDetails } from "./parking.model";
 
 export const carData: CarDataresponse[] = [
     {
-      carNo: 'KA-64-YX-0619',
+      carNo: 'KA64YX0619',
       color: 'Red',
       slot: 1,
-      date: new Date(),
+      date:'Sep 10, 2019, 2:32:10 PM',
     },
     {
-      carNo: 'KA-64-YX-1659',
+      carNo: 'KA64YX1659',
       color: 'White',
-      slot: 2,
-      date: new Date(),
+      slot: 10,
+      date: 'Sep 16, 2019, 2:32:10 PM',
     },
     {
-      carNo: 'KA-64-YX-2615',
+      carNo: 'KA64YX2615',
       color: 'Blue',
       slot: 3,
-      date: new Date(),
+      date: 'Sep 22, 2019, 2:32:10 PM',
     },
     {
-      carNo: 'KA-64-YX-6619',
+      carNo: 'KA64YX6619',
       color: 'Black',
-      slot: 4,
-      date: new Date(),
+      slot: 9,
+      date: 'Sep 18, 2019, 2:32:10 PM',
     },
     {
-      carNo: 'KA-64-YX-8614',
+      carNo: 'KA64YX8614',
       color: 'Red',
-      slot: 5,
-      date: new Date(),
+      slot: 2,
+      date: 'Sep 13, 2019, 2:32:10 PM',
     },
   ];
 

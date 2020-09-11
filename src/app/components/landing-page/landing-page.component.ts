@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -23,19 +23,19 @@ export class LandingPageComponent implements OnInit {
       parked: new FormControl('', [
         Validators.required,
         Validators.pattern(/^[1-9]+[0-9]*$/),
-         this.customValidate.bind(this),
+        this.customValidate.bind(this),
       ]),
     });
   }
   onSubmit() {
     this.router.navigate(['/dashboard']);
   }
-  
-  customValidate(control: FormControl): { [s: string]: boolean } {
-      if (control.value > 10) {
-        return { 'lessValue': true };
-      } else {
-        return null;
-      }
+
+  customValidate(control: FormControl): { [value: string]: boolean } {
+    if (control.value > 10) {
+      return { lessValue: true };
+    } else {
+      return null;
     }
+  }
 }
