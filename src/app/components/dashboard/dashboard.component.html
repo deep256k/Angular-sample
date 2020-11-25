@@ -1,0 +1,72 @@
+<div class="dasboard-container">
+  <div class="top-setion">
+    <div
+      class="left-setion"
+    >
+      <p>Total Parking Slots : {{ slotDetails?.totalParkingSlots }}</p>
+      <p>Available Parking Slots : {{ 10 - this.carDetails?.length }}</p>
+    </div>
+    <div class="right-setion">
+      <button class="btn-style btn-query" type="button" (click) ="onQuery()">Query Data</button>
+      <button class="btn-style btn-park" type="button" routerLink ="/park-car" [disabled] = "noparking">
+        Park a Car
+      </button>
+    </div>
+  </div>
+  <div class="search-section">
+    <div class="form-input">
+      <input
+        class="search-car"
+        [(ngModel)]="searchCar"
+        type="text"
+        placeholder="Type Reg No."
+      />
+      <select class="drop-down" (change)="filterCarData($event.target.value)">
+        <option value="">Choose color</option>
+        <option *ngFor="let color of colorOptions" value={{color}}>{{color}}</option>
+      </select>
+      <button
+        class="btn-style btn-search"
+        type="submit"
+        (click)="onSearch()"
+      >
+        Search
+      </button>
+      <button
+        class="btn-style btn-reset"
+        type="button"
+        (click)="onReset()"
+      >
+        Reset
+      </button>
+    </div>
+  </div>
+  <div class="car-details">
+    <table class="table-style">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th sortable="carNo" (sort)="onSort($event)">Car No. <img src="../../../assets/generic-sorting-16.png"></th>
+          <th sortable="color" (sort)="onSort($event)">Color <img src="../../../assets/generic-sorting-16.png"></th>
+          <th sortable="slot" (sort)="onSort($event)"> Slot No. <img src="../../../assets/generic-sorting-16.png"></th>
+          <th sortable="date" (sort)="onSort($event)">Date Time <img src="../../../assets/generic-sorting-16.png"></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let carData of parkedCar; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ carData?.carNo | uppercase }}</td>
+          <td>{{ carData?.color}}</td>
+          <td>{{ carData?.slot }}</td>
+          <td>{{ carData?.date | date:'medium'}}</td>
+          <td>
+            <button class="btn-style btn-remove" type="button" (click)="onRemove(carData)">
+              Remove
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

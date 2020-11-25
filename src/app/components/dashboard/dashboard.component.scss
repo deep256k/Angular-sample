@@ -1,0 +1,77 @@
+.dasboard-container {
+  .top-setion {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0px;
+    .btn-query {
+      color: #fff;
+      background-color: #5cb85c;
+      border-color: #4cae4c;
+      margin-right: 10px;
+    }
+    .btn-park {
+      color: #fff;
+      background-color: #d9534f;
+      border-color: #d43f3a;
+    }
+    .btn-park:disabled{
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  .search-section {
+    display: flex;
+    justify-content: flex-end;
+    .form-input {
+      display: flex;
+      .search-car {
+        margin-right: 10px;
+      }
+    }
+    .drop-down {
+      height: 34px;
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+    .btn-search {
+      color: #fff;
+      background-color: #5bc0de;
+      border-color: #46b8da;
+      margin: 0px 10px;
+    }
+    .btn-reset {
+      color: #fff;
+      background-color: #337ab7;
+      border-color: #2e6da4;
+    }
+  }
+  .car-details {
+    margin: 30px 0px;
+    .table-style{
+      width: 100%;
+      margin-bottom: 20px;
+      background-color: transparent;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;    
+    }
+    th{
+      background-color: black;
+      color: white;
+    }
+    .btn-remove{
+      color: #fff;
+      background-color: #ec971f;
+      border-color: #d58512;
+    }
+    img{
+      margin-left: 10px;
+      margin-bottom: -3px;
+    }
+  }
+}

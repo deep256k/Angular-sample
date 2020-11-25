@@ -1,0 +1,48 @@
+<div class="page-container">
+  <form [formGroup]="detailsForm" (ngSubmit)="onSubmit()">
+    <div class="form-space">
+      <label for="place">Parking Place</label>
+      <input
+        class="form-style"
+        type="number"
+        id="place"
+        formControlName="places"
+      />
+      <span
+        *ngIf="
+          !detailsForm.get('places').valid && detailsForm.get('places').dirty
+        "
+        class="error-text"
+        >Please Enter the Places Available</span
+      >
+    </div>
+    <div class="form-space">
+      <label for="parking">Car Parked</label>
+      <input
+        class="form-style"
+        type="number"
+        id="parking"
+        formControlName="parked"
+      />
+      <span
+        *ngIf="
+          !detailsForm.get('parked').valid && detailsForm.get('parked').dirty
+        "
+        class="error-text"
+        ><span *ngIf="detailsForm.get('parked').errors['lessValue']"
+          >Please enter value less than 10</span
+        >
+        <span class ="error-text" *ngIf="detailsForm.get('parked').errors['required']"
+          >Please enter a value</span
+        ></span
+      >
+    </div>
+    <button
+      class="btn-style submit-button"
+      type="submit"
+      [disabled]="!detailsForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>
